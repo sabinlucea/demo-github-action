@@ -37,7 +37,7 @@ jobs:
             - name: upload artifact
               uses: actions/upload-pages-artifact@v2
               with:
-                path: dist/
+                path: "./dist/"
             - name: Deployment web page
               id: deploymentID
               uses: actions/deploy-pages@v2
