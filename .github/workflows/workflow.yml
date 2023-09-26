@@ -21,9 +21,12 @@ jobs:
             - name: setup git hub pages
               uses: action/configure-pagesv3
             - name: upload artifact
-              use: actions/upload-pages-artifact@v2
+              uses: actions/upload-pages-artifact@v2
               with:
                 path: "./dist/"
+            - name: Deployment web page
+              uses: actions/deploy-pages@v2
+
 
  #             run : git clone git@github.com:sabinlucea/demo-github-action.git
 
