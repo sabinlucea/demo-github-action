@@ -12,12 +12,15 @@ concurrency:
     cancel-in-progress: false
 jobs:
     test:
+        environment:
+            name: github-pages
+            url: ${{ steps.deploymentID.outputs.page_url }}
         runs-on: ubuntu-latest
         steps:
             - name: Hello World
               run: echo "hello World"
-           - name: Clone Repo
-             uses: actions/checkout@v3
+            - name: Clone Repo
+              uses: actions/checkout@v3
             - name: setup git hub pages
               uses: action/configure-pagesv3
             - name: upload artifact
@@ -25,6 +28,7 @@ jobs:
               with:
                 path: "./dist/"
             - name: Deployment web page
+              id: deploymentID
               uses: actions/deploy-pages@v2
 
 
