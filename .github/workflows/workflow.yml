@@ -16,3 +16,6 @@ jobs:
         steps:
             - name: Hello World
               run: echo "hello World"
+            - name: Clone Repo
+              run : git clone git@github.com:sabinlucea/demo-github-action.git
+              
